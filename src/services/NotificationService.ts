@@ -95,15 +95,18 @@ export class NotificationService {
       thresholdValue = 0;
     }
 
-    // 格式化时间戳
-    const formattedTime = timestamp.toLocaleString('zh-CN', {
+    // 格式化时间戳 - 使用当前时间而不是API返回的时间戳
+    // 因为我们关心的是检测到阈值的时间，而不是API数据的更新时间
+    const now = new Date();
+    const formattedTime = now.toLocaleString('zh-CN', {
       year: 'numeric',
       month: '2-digit',
       day: '2-digit',
       hour: '2-digit',
       minute: '2-digit',
       second: '2-digit',
-      hour12: false
+      hour12: false,
+      timeZone: 'Asia/Shanghai'
     });
 
     // 构建主题
