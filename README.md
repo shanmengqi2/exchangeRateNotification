@@ -274,3 +274,5 @@ The application logs important events to the console. Set `LOG_LEVEL=info` in yo
 ## License
 
 ISC
+
+v0.0.2
